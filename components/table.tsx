@@ -369,6 +369,7 @@ const ProjectsTable = (props: any) => {
     let projectNameFilter = "";
     let ownerEmailFilter = "";
     let fixtureTypeFilter = "";
+    let adapterCodeFilter = "";
     // setProjectNameFilter("");
     // setFixtureTypeFilter("");
     // setOwnerEmailFilter("");
@@ -387,6 +388,9 @@ const ProjectsTable = (props: any) => {
       case "OwnerEmail":
         ownerEmailFilter = value;
         break;
+      case "AdapterCode":
+        adapterCodeFilter = value;
+        break;        
     }
 
     if (value === "") {
@@ -408,7 +412,12 @@ const ProjectsTable = (props: any) => {
         (Project.fixture_type
           .toLowerCase()
           .includes(fixtureTypeFilter.toLowerCase()) &&
-          fixtureTypeFilter)
+          fixtureTypeFilter) ||
+        (Project.adapter_code.toString()
+          .toLowerCase()
+          .includes(adapterCodeFilter.toLowerCase()) &&
+          adapterCodeFilter)
+
       ) {
         searchedProjects.push(Project);
       }
@@ -451,6 +460,9 @@ const ProjectsTable = (props: any) => {
             <option className="fw-bolder" value="OwnerEmail">
               Owner email
             </option>
+            <option className="fw-bolder" value="AdapterCode">
+              Adapter code
+            </option>            
           </select>
 
           <input
