@@ -77,12 +77,6 @@ export default NextAuth({
       async authorize(credentials, req) {
         console.log(credentials);
         if (
-          userVlad.email === credentials.email &&
-          userVlad.password === credentials.password
-        ) {
-          console.log("User OK");
-          return userVlad;
-        } else if (
           userCata.email === credentials.email &&
           userCata.password === credentials.password
         ) {
