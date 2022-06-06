@@ -2,12 +2,6 @@ import NextAuth from "next-auth";
 import Github from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const userVlad = {
-  csrfToken: "16d5c19d0c22059793de23406140e67dbdc1f8a5ae579b5185ae83d562cda7e6",
-  email: "vlad.somai@continental.com",
-  password: "3ng1n33r",
-};
-
 const userCata = {
   csrfToken: "16d5c19d0c22059793de23406140e67dbdc1f8a5ae579b5185ae83d562cda7e6",
   email: "catalin.achim@continental.com",
